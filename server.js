@@ -13,12 +13,12 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
-app.get(bobby() => {
-    rollbar.info("You")
-})
-catch (err) {
-    rollbar.error(err)
-        console.log(err)
-}
+try {
+    nonExistentFunction();
+  } catch (error) {
+    console.error(error);
+    // Expected output: ReferenceError: nonExistentFunction is not defined
+    // (Note: the exact output may be browser-dependent)
+  }
 
 app.listen(4000, () => console.log("Server running on 4000"))
