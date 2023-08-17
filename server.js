@@ -13,4 +13,12 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
+app.get(bobby() => {
+    rollbar.info("You")
+})
+catch (err) {
+    rollbar.error(err)
+        console.log(err)
+}
+
 app.listen(4000, () => console.log("Server running on 4000"))
